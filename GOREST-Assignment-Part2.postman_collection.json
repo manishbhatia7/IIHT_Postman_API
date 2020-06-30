@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "96d994ad-72bf-40cf-8d43-0059137b00d9",
+		"name": "GOREST-Assignment-Part2",
+		"description": "This is the default collection for IIHT assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Parameterised Get Request",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gorest.co.in/public-api/users?access-token=-HDtcudSQEnOnhlQEJhpcCSjOltkM0qQk45m&first_name=Connor&gender=female",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public-api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "access-token",
+							"value": "-HDtcudSQEnOnhlQEJhpcCSjOltkM0qQk45m"
+						},
+						{
+							"key": "first_name",
+							"value": "Connor"
+						},
+						{
+							"key": "gender",
+							"value": "female"
+						}
+					]
+				},
+				"description": "This GET request passes multiple parameters to fetch only specfic data as mentioned in key."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Request without parameters",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "-HDtcudSQEnOnhlQEJhpcCSjOltkM0qQk45m",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gorest.co.in/public-api/posts",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public-api",
+						"posts"
+					]
+				},
+				"description": "Here we are not sending access key in parameters but as Bearer token"
+			},
+			"response": []
+		},
+		{
+			"name": "Post Request for adding new user",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "-HDtcudSQEnOnhlQEJhpcCSjOltkM0qQk45m",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"id\": \"1765\",\r\n            \"first_name\": \"Mani\",\r\n            \"last_name\": \"Rathnam\",\r\n            \"gender\": \"male\",\r\n            \"dob\": \"1956-06-02\",\r\n            \"email\": \"manir@example.org\",\r\n            \"phone\": \"1-546-531-4873 x03903\",\r\n            \"website\": \"https://www.bosco.com/quam-exercitationem-est-officia-adipisci\",\r\n            \"address\": \"1173 Little Square\\nNew Gwenville, NV 73752\",\r\n            \"status\": \"active\",\r\n            \"_links\": {\r\n                \"self\": {\r\n                    \"href\": \"https://gorest.co.in/public-api/users/1765\"\r\n                },\r\n                \"edit\": {\r\n                    \"href\": \"https://gorest.co.in/public-api/users/1765\"\r\n                },\r\n                \"avatar\": {\r\n                    \"href\": \"https://lorempixel.com/250/250/people/?80304\"\r\n                }\r\n            }\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gorest.co.in/public-api/users",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public-api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete request to delete user",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "-HDtcudSQEnOnhlQEJhpcCSjOltkM0qQk45m",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n            \"id\": \"40661\",\r\n            \"first_name\": \"Mani\",\r\n            \"last_name\": \"Rathnam\",\r\n            \"gender\": \"male\",\r\n            \"dob\": \"1956-06-02\",\r\n            \"email\": \"manir@example.org\",\r\n            \"phone\": \"1-546-531-4873 x03903\",\r\n            \"website\": \"https://www.bosco.com/quam-exercitationem-est-officia-adipisci\",\r\n            \"address\": \"1173 Little Square\\nNew Gwenville, NV 73752\",\r\n            \"status\": \"active\",\r\n            \"_links\": {\r\n                \"self\": {\r\n                    \"href\": \"https://gorest.co.in/public-api/users/40661\"\r\n                },\r\n                \"edit\": {\r\n                    \"href\": \"https://gorest.co.in/public-api/users/40661\"\r\n                },\r\n                \"avatar\": {\r\n                    \"href\": null\r\n                }\r\n            }\r\n        }"
+				},
+				"url": {
+					"raw": "https://gorest.co.in/public-api/users/40661",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public-api",
+						"users",
+						"40661"
+					]
+				},
+				"description": "This request will delete a specific user present in api"
+			},
+			"response": []
+		},
+		{
+			"name": "Get after successful delete",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "-HDtcudSQEnOnhlQEJhpcCSjOltkM0qQk45m",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gorest.co.in/public-api/users/40661",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public-api",
+						"users",
+						"40661"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch request(Update data)",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "-HDtcudSQEnOnhlQEJhpcCSjOltkM0qQk45m",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"1861\",\r\n        \"first_name\": \"St\",\r\n        \"last_name\": \"Philomena\",\r\n        \"gender\": \"male\",\r\n        \"dob\": \"1943-07-04\",\r\n        \"email\": \"mkeebler@example.com\",\r\n        \"phone\": \"+1-316-739-6958\",\r\n        \"website\": \"http://www.waelchi.com/quaerat-eius-aliquid-qui-eligendi-corrupti-enim.html\",\r\n        \"address\": \"50079 Antwon Stream Suite 724\\nEast Marisaside, WV 18351\",\r\n        \"status\": \"active\",\r\n        \"_links\": {\r\n            \"self\": {\r\n                \"href\": \"https://gorest.co.in/public-api/users/1861\"\r\n            },\r\n            \"edit\": {\r\n                \"href\": \"https://gorest.co.in/public-api/users/1861\"\r\n            },\r\n            \"avatar\": {\r\n                \"href\": \"https://lorempixel.com/250/250/people/?29143\"\r\n            }\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gorest.co.in/public-api/users/1861",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public-api",
+						"users",
+						"1861"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d49276ca-9347-45c8-976a-2912fb79b765",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8aaa2c06-6222-4a64-8ae5-b1e9843f78f9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

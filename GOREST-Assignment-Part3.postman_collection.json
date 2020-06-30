@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "d4904f6b-f04c-49bb-bf5b-2b3165180602",
+		"name": "GOREST-Assignment-Part3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post Request with body parameters-Using form data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3f57fdbd-a88d-4012-8e1e-fd47b37227ca",
+						"exec": [
+							"pm.test(\"Status code is 200\",function()\r",
+							"{\r",
+							"    pm.response.to.have.status(302);\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "-HDtcudSQEnOnhlQEJhpcCSjOltkM0qQk45m",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1877",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "Rocky",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "Bose",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "Rocks125@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "male",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gorest.co.in/public-api/users",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public-api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Request with body parameters-Using raw data",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "-HDtcudSQEnOnhlQEJhpcCSjOltkM0qQk45m",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n            \"id\": \"1714\",\r\n            \"user_id\": \"1913\",\r\n            \"title\": \"Leonarda da Vinci\",\r\n            \"_links\": {\r\n                \"self\": {\r\n                    \"href\": \"https://gorest.co.in/public-api/albums/1714\"\r\n                },\r\n                \"edit\": {\r\n                    \"href\": \"https://gorest.co.in/public-api/albums/1714\"\r\n                }\r\n            }\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gorest.co.in/public-api/albums",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public-api",
+						"albums"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
